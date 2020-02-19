@@ -1,0 +1,222 @@
+/* Responsivo 
+
+    960px
+    740px
+*/
+
+
+/* Resetando algumas propriedas padrões do HTML */
+
+body, h1, h2, h3, p, ul {
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    font-family: Georgia, serif;
+    color: #252525;
+}
+
+* {
+    box-sizing: border-box; /* definindo que em todo o site quando definir o tamanho de um elemento, por exemplo um link com 200px e nesse link eu adicionar uma borda, um padding esse valor não será somado mais aos 200px do tamanho e sim será incluso nos 200px de tamanho */
+}
+
+/* Finalizando o Reset */
+
+/* Menu */
+
+.menu {
+    background: #252525; 
+}
+
+.menu-nav a {
+    text-decoration: none; /* tirando a decoração em azul de links */
+    color: #fff;
+    font-size: 1.125em; /* 18 px, apenas pegar 18 é dividir pela padrão de tamanho da fonte dos navegadores que é 16 */
+}
+
+/* Fim Menu */
+
+/* Introdução */
+
+.introducao {
+    background: url('../img/bg-intro.jpg') no-repeat center center; /* centralizando para cima e para baixo e para a direita e para esquerda*/
+    background-size: cover; /* sempre irá pegar 100% do tamanho da tela */
+    color: #fff;
+}
+
+.introducao h1 {
+    font-size: 3em;
+    text-transform: uppercase;
+}
+
+.introducao h1::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: #fff;
+}
+
+.introducao p {
+    font-size: 1.125em;
+    font-style: italic;
+}
+
+/* Fim Introdução */
+
+
+/* Sobre */
+
+
+.sobre h2 {
+    font-size: 2.25em;
+}
+
+.sobre-cafe h3 {
+    font-size: 2.25em;
+    line-height: 1em;
+    color: #fff;
+    background-color: #252525;
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    position: relative; /* definindo posição do elemento relativa a ele mesmo, para que conseguir usar o top, quando a posição é relativa o conteúdo do elemento pode estar em outro lugar, porém ainda ocupa o espaço original */
+}
+
+.sobre > p { /* falando sobre com o p que está dentro da classe sobre */
+    font-size: 1.125em;
+    line-height: 1.4em; /* geralmente por padrão o espaçamento da quebra de linha do texto é em torno de 1.3em 1.4em 1.5.em. 1.6em */
+    font-style: italic;
+}
+
+/* Fim Sobre */
+
+/* Produtos */
+
+.cafe {
+
+    background-color: #E7E4D8;
+    border-top: 3px solid #D6D3C8;
+    border-bottom: 3px solid #D6D3C8;
+}
+
+.cafe-tipos h2 {
+    font-size: 2.25em;
+}
+
+.cafe-tipos h2::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: currentColor; /* pegando a cor que está como padrão */
+    border-radius: 50%; /* se a borda-radius for 50% do tamanho total da largura e altura é criado uma figura redonda */
+    border: 5px solid #E7E4D8;
+    box-shadow: 0 0 0 5px currentColor; /* definindo que terá uma sombra com o tamanho de 10px e informando que irá pegar a color que está definida por padrão */
+}
+
+h2.cafe-paulista { /* adicionado junto com o before apenas os círculos irão pegar a cor, agora sem o before o texto também irá pegar essa cor */
+    color: #492901;
+}
+
+h2.cafe-carioca {
+    color: #C17139;
+}
+
+h2.cafe-mineiro {
+    color: #D7A54D;
+}
+
+.cafe-tipos p {
+    font-size: 1.125em;
+    line-height: 1.4em;
+
+}
+
+.cafe-botao {
+    border: 3px solid;
+    text-decoration: none; /* tirando o estilo que veem padrão no botão */
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.125em;
+    color: #252525;
+}
+
+/* Fim Produtos */
+
+/* Locais */
+
+
+.lojas-locais h2 {
+    font-size: 2.25em;
+    margin-bottom: 20px;
+}
+
+.lojas-locais p {
+    font-size: 1.125em;
+    line-height: 1.4em;
+}
+
+.lojas-locais a {
+    font-size: 1.125em;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #252525; /* definindo a cor, porquê a tag a não pega a cor padrão */
+    border: 3px solid;
+}
+
+/* Fim Locais */
+
+
+/* Newsletter */
+
+.newsletter {
+    background-color: #E7E4D8;
+}
+
+.newsletter-info h2 {
+    font-size: 2.25em;
+    margin-bottom: 10px;
+}
+
+.newsletter-info p {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.newsletter form input { /* não pega as configurações de cores padrões, por ser input e também não pega a font, por isso é necessário definir isso */
+    background-color: #E7E4D8;
+    border: 3px solid;
+    font-family: Georgia, serif;
+    font-size: 1.5em;
+    color: #252525;
+    outline: none; /* tirando um azul que fica quando está selecionado o input */
+}
+
+.newsletter form button {
+    color: #fff;
+    background-color: #252525;
+    font-size: 1.5em;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer; /* quando passar o cursor por cima dele irá ficar com o cursor clicável */
+    outline: none; /* tirando um azul que fica quando clicado o botão */
+}
+
+/* Fim Newsletter */
+
+/* Rodapé */
+
+.rodape {
+    background-color: #D6D3C8;
+}
+
+.rodape-container p {
+    font-size: 1.125em;
+    line-height: 1.4em;;
+}
+
+/* Fim Rodapé */
