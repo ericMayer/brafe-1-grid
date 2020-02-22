@@ -70,3 +70,22 @@
 .grid-12 {
     width: calc(100% - 20px);
 }
+
+/* Design Responsivo */
+
+@media only screen and (max-width: 739px) {
+    .container {
+        max-width: 300px;
+    }
+
+    .grid-1, .grid-2, .grid-3, .grid-4, .grid-5, .grid-6, .grid-7, .grid-8, 
+    .grid-9, .grid-10, .grid-11, .grid-12 {
+        width: 100%; /* todos os grids irão virar de uma coluna só */
+        margin-left: 0px;
+        margin-right: 0px;
+        float: none; /* tirando flutuação do design do celular */
+    }
+
+}
+
+/* Fim do Design Responsivo */
