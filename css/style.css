@@ -23,7 +23,7 @@ body {
 
 img {
     max-width: 100%;
-    display: block;
+    display: block; /* não irá pegar a margem que a imagem pega automática no navegador */
 }
 
 /* Finalizando o Reset */
@@ -31,13 +31,35 @@ img {
 /* Menu */
 
 .menu {
-    background: #252525; 
+    background: #252525;
+    padding: 20px 0;
 }
 
 .menu-nav a {
     text-decoration: none; /* tirando a decoração em azul de links */
     color: #fff;
     font-size: 1.125em; /* 18 px, apenas pegar 18 é dividir pela padrão de tamanho da fonte dos navegadores que é 16 */
+    display: block; /* tag a por padrão é inline, se não adicionar o display block não é possível pegar padding ou margem */
+    padding: 8px;
+}
+
+.menu-nav ul {
+    float: right;
+}
+
+.menu-nav ul li {
+    display: inline-block;
+   
+}
+
+@media only screen and (max-width: 739px) {
+    .menu-nav ul {
+        float: none;
+    }
+
+    .menu-nav a {
+        padding-left: 0px;
+    }
 }
 
 /* Fim Menu */
@@ -48,6 +70,8 @@ img {
     background: url('../img/bg-intro.jpg') no-repeat center center; /* centralizando para cima e para baixo e para a direita e para esquerda*/
     background-size: cover; /* sempre irá pegar 100% do tamanho da tela */
     color: #fff;
+    padding: 150px 0;
+    text-align: center;
 }
 
 .introducao h1 {
@@ -61,6 +85,7 @@ img {
     width: 20px;
     height: 4px;
     background-color: #fff;
+    margin: 10px auto;
 }
 
 .introducao p {
@@ -68,14 +93,25 @@ img {
     font-style: italic;
 }
 
+@media only screen and (max-width: 739px) {
+    .introducao {
+        padding: 60px 0;
+    }
+}
+
 /* Fim Introdução */
 
 
 /* Sobre */
 
+.sobre {
+    margin: 60px auto;
+}
 
 .sobre h2 {
     font-size: 2.25em;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .sobre-cafe h3 {
@@ -87,12 +123,18 @@ img {
     font-weight: normal;
     font-style: italic;
     position: relative; /* definindo posição do elemento relativa a ele mesmo, para que conseguir usar o top, quando a posição é relativa o conteúdo do elemento pode estar em outro lugar, porém ainda ocupa o espaço original */
+    width: 220px;
+    top: -20px;
+    padding: 8px;
 }
 
 .sobre > p { /* falando sobre com o p que está dentro da classe sobre */
     font-size: 1.125em;
     line-height: 1.4em; /* geralmente por padrão o espaçamento da quebra de linha do texto é em torno de 1.3em 1.4em 1.5.em. 1.6em */
     font-style: italic;
+    text-align: center;
+    max-width: 460px;
+    margin: 20px auto 0 auto;
 }
 
 /* Fim Sobre */
@@ -100,14 +142,20 @@ img {
 /* Produtos */
 
 .cafe {
-
+    padding: 60px 0;
     background-color: #E7E4D8;
     border-top: 3px solid #D6D3C8;
     border-bottom: 3px solid #D6D3C8;
 }
 
+.cafe-tipos {
+    margin-bottom: 40px;
+}
+
 .cafe-tipos h2 {
     font-size: 2.25em;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .cafe-tipos h2::before {
@@ -119,6 +167,7 @@ img {
     border-radius: 50%; /* se a borda-radius for 50% do tamanho total da largura e altura é criado uma figura redonda */
     border: 5px solid #E7E4D8;
     box-shadow: 0 0 0 5px currentColor; /* definindo que terá uma sombra com o tamanho de 10px e informando que irá pegar a color que está definida por padrão */
+    margin: 20px auto;
 }
 
 h2.cafe-paulista { /* adicionado junto com o before apenas os círculos irão pegar a cor, agora sem o before o texto também irá pegar essa cor */
@@ -136,7 +185,6 @@ h2.cafe-mineiro {
 .cafe-tipos p {
     font-size: 1.125em;
     line-height: 1.4em;
-
 }
 
 .cafe-botao {
@@ -147,12 +195,23 @@ h2.cafe-mineiro {
     text-transform: uppercase;
     font-size: 1.125em;
     color: #252525;
+    width: 180px;
+    display: block; /* mudando do padrão inline da tag para block */
+    padding: 15px;
+    margin: 0 auto; /* não é possível alinhar um elemento inline com margin auto */
 }
 
 /* Fim Produtos */
 
 /* Locais */
 
+.lojas {
+    margin: 60px 0;
+}
+
+.lojas-locais {
+    margin-bottom: 40px;
+}
 
 .lojas-locais h2 {
     font-size: 2.25em;
@@ -162,6 +221,8 @@ h2.cafe-mineiro {
 .lojas-locais p {
     font-size: 1.125em;
     line-height: 1.4em;
+    max-width: 320px;
+    margin-bottom: 40px;
 }
 
 .lojas-locais a {
@@ -170,6 +231,7 @@ h2.cafe-mineiro {
     text-transform: uppercase;
     color: #252525; /* definindo a cor, porquê a tag a não pega a cor padrão */
     border: 3px solid;
+    padding: 15px;
 }
 
 /* Fim Locais */
@@ -179,6 +241,7 @@ h2.cafe-mineiro {
 
 .newsletter {
     background-color: #E7E4D8;
+    padding: 20px 0;
 }
 
 .newsletter-info h2 {
@@ -198,6 +261,9 @@ h2.cafe-mineiro {
     font-size: 1.5em;
     color: #252525;
     outline: none; /* tirando um azul que fica quando está selecionado o input */
+    width: calc(100% - 140px);
+    float: left;
+    padding: 12px;
 }
 
 .newsletter form button {
@@ -209,6 +275,15 @@ h2.cafe-mineiro {
     border: none;
     cursor: pointer; /* quando passar o cursor por cima dele irá ficar com o cursor clicável */
     outline: none; /* tirando um azul que fica quando clicado o botão */
+    width: 140px;
+    padding: 15px;
+    float: left;
+}
+
+@media only screen and (max-width: 739px) {
+    .newsletter-info p {
+        margin-bottom: 20px;
+    }
 }
 
 /* Fim Newsletter */
@@ -217,11 +292,23 @@ h2.cafe-mineiro {
 
 .rodape {
     background-color: #D6D3C8;
+    padding: 20px 0;
 }
 
-.rodape-container p {
+.rodape p {
     font-size: 1.125em;
-    line-height: 1.4em;;
+    line-height: 1.4em;
+}
+
+.rodape img {
+    float: right;
+}
+
+@media only screen and (max-width: 739px) {
+    .rodape img {
+        float: none;
+        margin-top: 20px;
+    }
 }
 
 /* Fim Rodapé */
